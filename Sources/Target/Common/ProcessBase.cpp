@@ -131,8 +131,8 @@ ErrorCode ProcessBase::resume(int signal, std::set<Thread *> const &excluded) {
     switch (thread->state()) {
     case Thread::kInvalid:
     case Thread::kTerminated:
-      DS2BUG("trying to resume tid %" PRI_PID " in state %s", thread->tid(),
-             Stringify::ThreadState(thread->state()));
+      DS2LOG(Warning, "trying to resume tid %" PRI_PID " in state %s",
+             thread->tid(), Stringify::ThreadState(thread->state()));
       break;
 
     case Thread::kRunning:
