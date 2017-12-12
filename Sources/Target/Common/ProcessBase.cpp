@@ -83,8 +83,8 @@ ErrorCode ProcessBase::suspend() {
   for (auto thread : threads) {
     switch (thread->state()) {
     case Thread::kInvalid:
-      DS2BUG("trying to suspend tid %" PRI_PID " in state %s", thread->tid(),
-             Stringify::ThreadState(thread->state()));
+      DS2LOG(Warning, "trying to suspend tid %" PRI_PID " in state %s",
+             thread->tid(), Stringify::ThreadState(thread->state()));
       break;
 
     case Thread::kStepped:
