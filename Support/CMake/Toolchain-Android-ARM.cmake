@@ -10,4 +10,4 @@
 
 set(CMAKE_SYSTEM_NAME Android)
 set(CMAKE_ANDROID_ARCH_ABI armeabi)
-set(CMAKE_ANDROID_NDK /tmp/android-ndk)
+set(CMAKE_ANDROID_NDK /opt/android_ndk/r13b)
