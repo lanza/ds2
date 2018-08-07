@@ -22,7 +22,7 @@ git_clone() {
     branch="${3-}"
 
     if [ ! -e "$dst" ]; then
-        clone_command=(git clone --depth 1)
+        clone_command=(git clone)
         if [ -n "$branch" ]; then
             clone_command+=(--branch "$branch")
         fi

@@ -1,0 +1,14 @@
+# docker build -f Support/Testing/CircleCI/Dockerfile .
+# docker run --privileged --security-opt seccomp:unconfined --rm -it --name ds2-testing 360abf8e6246
+# docker tag 360abf8e6246 sas42/ds2-build-env:2018-11-01_16-20-00
+# docker push sas42/ds2-build-env:<tag>
+
+FROM sas42/ds2-build-env:latest
+MAINTAINER Nathan Lanza <lanza@fb.com>
+
+RUN apt-get -y install man openssl cargo
+
+RUN useradd --create-home --shell /usr/bin/zsh --home-dir /home/facebook --password $(openssl passwd -1 5625) facebook
+RUN usermod -aG sudo facebook
+WORKDIR /home/facebook
+
