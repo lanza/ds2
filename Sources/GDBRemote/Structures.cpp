@@ -405,7 +405,7 @@ std::string StopInfo::encode(CompatibilityMode mode, bool listThreads) const {
     break;
 
   default:
-    DS2BUG("impossible StopInfo event: %s", Stringify::StopEvent(event));
+    DS2BUGV("impossible StopInfo event: %s", Stringify::StopEvent(event));
   }
 
   //

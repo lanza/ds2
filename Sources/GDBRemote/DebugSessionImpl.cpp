@@ -208,7 +208,7 @@ ErrorCode DebugSessionImplBase::queryStopInfo(Session &session, Thread *thread,
     break;
 
   default:
-    DS2BUG("impossible StopInfo event: %s", Stringify::StopEvent(stop.event));
+    DS2BUGV("impossible StopInfo event: %s", Stringify::StopEvent(stop.event));
   }
 
   _process->enumerateThreads(
